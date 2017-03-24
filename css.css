@@ -50,11 +50,14 @@
 }
 
 
-/* makes everything not already covered by a css rule slightly rounder and changes the font to Inconsolata */
+/* changes the font to Inconsolata */
 
 *,body,.guild-header,.guild-channels-wrapper, .guild-channels-wrapper .channel-list-top, .guild-header, .guild-header header .channel-textarea-inner textarea {
 	font-family: Inconsolata, monospace;
-}/* rounds images */
+}
+
+/* rounds images */
+
 img.image {
 	border-radius: 10px
 }
