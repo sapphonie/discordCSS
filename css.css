@@ -38,7 +38,7 @@
 
 /* makes avatars more square shaped */
 
-.avatar-large, .avatar-profile, .avatar-small, .avatar-xlarge, .avatar-xsmall, .avatar-xxlarge {
+.avatar-large,.avatar-profile, .avatar-small, .avatar-xlarge, .avatar-xsmall, .avatar-xxlarge {
 	border-radius: 25%;
 }
 
@@ -50,8 +50,16 @@
 }
 
 
-/* makes everything not already covered by a css rule slightly rounder */
+/* makes everything not already covered by a css rule slightly rounder and changes the font to Inconsolata */
 
-* {
-	border-radius: 2.5%
+*,body,.guild-header,.guild-channels-wrapper, .guild-channels-wrapper .channel-list-top, .guild-header, .guild-header header .channel-textarea-inner textarea {
+	font-family: Inconsolata, monospace;
+}/* rounds images */
+img.image {
+	border-radius: 10px
+}
+
+/* rounds images and gifs 	*/
+.message-group .comment .attachment-image a, .message-group .comment .attachment-image canvas, .message-group .comment .attachment-image img {
+	border-radius: 10px
 }
