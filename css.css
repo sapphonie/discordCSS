@@ -1,0 +1,76 @@
+/* makes text actually white */
+
+.theme-dark .message-group .comment .markup {
+    color: #FFFFFF;
+}
+
+
+/* makes text vertically closer together */
+
+.message-group {
+    border-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+/* hides blocked messages */
+
+.message-group-blocked {
+    display: none !important;
+}
+
+
+/* gets rid of lines in between messages (dark mode only) */
+
+.theme-dark .chat form {
+    border-top: 0px;
+}
+
+
+/* gets rid of line above chat box */
+
+.chat form {
+    box-shadow: 0 0px 0 rgba(0, 0, 0, .1);
+    border-top: 0px;
+}
+
+
+/* makes avatars more square shaped */
+
+.avatar-large, .avatar-profile, .avatar-small, .avatar-xlarge, .avatar-xsmall, .avatar-xxlarge {
+    border-radius: 25%;
+}
+
+
+/* removes dumb "new messages" thing that nobody cares about */
+
+.chat .divider.divider-red {
+    display: none !important
+}
+
+
+/* makes everything not already covered by a css rule slightly rounder and changes the font to Inconsolata */
+
+*, body, .guild-header, .guild-channels-wrapper, .guild-channels-wrapper .channel-list-top, .guild-header, .guild-header header .channel-textarea-inner textarea {
+    font-family: Inconsolata, monospace;
+}
+
+
+/* rounds images */
+
+img.image {
+    border-radius: 10px
+}
+
+
+/* rounds images and gifs 	*/
+
+.message-group .comment .attachment-image a, .message-group .comment .attachment-image canvas, .message-group .comment .attachment-image img {
+    border-radius: 10px
+}
+
+/* makes "new activity" notification my favorite color */
+.guilds-wrapper .guilds .guild.unread:before {
+    background: #00ffbf
+}
