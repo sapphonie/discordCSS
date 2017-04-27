@@ -1,7 +1,4 @@
-/* test2 */
-
 /* makes text actually white */
-
 .theme-dark .message-group .comment .markup {
     color: #FFFFFF;
 }
@@ -51,15 +48,7 @@
     display: none !important
 }
 
-
-/* changes the font to Inconsolata (crashes discord when opening roles for some reason, dont use this)
-
-*, body, .guild-header, .guild-channels-wrapper, .guild-channels-wrapper .channel-list-top, .guild-header, .guild-header header .channel-textarea-inner textarea {
-    font-family: Inconsolata, monospace !important;
-}
-*/
-
-/* makes "new activity" notification my favorite color */
+/* makes "new activity" notification on the server list my favorite color */
 
 .guilds-wrapper .guilds .guild.unread:before {
     background: #00ffbf
