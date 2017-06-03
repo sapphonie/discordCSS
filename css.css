@@ -1,3 +1,9 @@
+/* changes font to Ubuntu Light */
+
+* {
+font: Ubuntu Light !important;
+}
+
 /* makes text actually white */
 
 .theme-dark .message-group .comment .markup {
