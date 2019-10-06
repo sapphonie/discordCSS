@@ -1,8 +1,16 @@
+/* hides blocked messages */
+
+*[class^='messageGroupBlocked-']{
+    display: none !important;    
+}
+
 /* changes font to Ubuntu Light */
 
 * {
-font: Ubuntu Light !important;
+font-family: "Ubuntu", sans-serif !important;
+font-weight: -1;
 }
+/*  "Ubuntu Light", /*
 
 /* makes text actually white */
 
@@ -14,24 +22,44 @@ font: Ubuntu Light !important;
 /* makes text vertically closer together */
 
 .message-group {
-  border-bottom: 0px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  border-bottom: 0px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
 
-
-/* hides blocked messages */
-
-.message-group-blocked {
-  display: none !important;
+form {
+	padding-top: -20px !important;
+	border: 0px !important;
+	box-shadow: 0 0px 0px transparent !important;
 }
 
+.message-group.hide-overflow {
+padding-top:0px !important;
+padding-bottom:0px !important;
+
+}
+
+.theme-dark *[class^='channelTextArea'] {
+    border-top: 0px solid hsla(0,0%,100%,.06) !important;
+}
 
 /* gets rid of lines in between messages (dark mode only) */
 
-.theme-dark .chat form {
-  border-top: 0px;
+*[class^='channelTextAreaEnabledNoAttach'] {
+  padding-top: 0px; !important
 }
+
+*[class^='container'],
+*[class^='channelTextArea'] {
+	padding-top: 1px !important;
+	padding-bottom: 1px !important;
+
+}
+
+.container-2Pjhx- {
+    color: #FFFFFF !important;
+}
+
 
 
 /* gets rid of line above chat box */
@@ -42,11 +70,6 @@ font: Ubuntu Light !important;
 }
 
 
-/* makes avatars more square shaped */
-
-.avatar-large, .avatar-profile, .avatar-small, .avatar-xlarge, .avatar-xsmall, .avatar-xxlarge {
-  border-radius: 25%;
-}
 
 
 /* removes dumb "new messages" thing that nobody cares about */
@@ -56,19 +79,182 @@ font: Ubuntu Light !important;
 }
 
 
+
 /* makes "new activity" notifications on the server list my favorite color */
 
 .guilds-wrapper .guilds .guild.unread:before {
   background: #00ffbf
 }
 
-.guild-channels .channel-text.unread:not(.selected):not(.channel-muted):before {
-  background: #00ffbf
+div#app-mount {
+    background: rgba(0,255,191,.4) !important;
+}
+
+*[class^='-titleBar-'] {
+	background-color: rgba(0,255,191,.4) !important;
 }
 
 
-/* gets rid of borders on friends list */
-
-.theme-dark #friends .friends-table .friends-row+.friends-row {
-  border: 0px;
+/* TRANSP.CSS BELOW */
+.notice.notice-streamer-mode {
+    background-color: transparent !important;
 }
+.scroller-wrap .scroller::-webkit-scrollbar-thumb, .scroller-wrap .scroller::-webkit-scrollbar-track-piece {
+       
+    border: 0px solid #fff !important;
+}
+
+.theme-dark .friends-table .scroller-wrap ::-webkit-scrollbar-thumb, .theme-dark .messages-wrapper .scroller-wrap ::-webkit-scrollbar-thumb {
+    background-color: rgba(000,255,191,.3);
+}
+
+message-group.is-local-bot-message {
+    background: transparent !important;
+    box-shadow: 0px 0 !important
+}
+
+.privateChannels-1nO12o, .panels-j1Uci_{
+    background-color: transparent !important;
+}
+
+.title-3qD0b-.container-1r6BKw {
+    background-color: transparent !important;
+}
+
+.theme-dark .container-1r6BKw {
+    -webkit-box-shadow: 0 0px 0 rgba(0,0,0,0), 0 0px 0 rgba(0,0,0,0), 0 0px 0 rgba(0,0,0,0); 
+    background: #36393f;
+    box-shadow: 0px -0px 0 rgba(0,0,0,0), 0 0px 0 rgba(0,0,0,0), 0 0px 0 rgba(0,0,0,0);
+    color: #b9bbbe;
+}
+
+.theme-dark .children-19S4PO:after {
+    background: -webkit-gradient(linear,left top,right top,from(rgba(54,57,63,0)),to(#36393f));
+    background: linear-gradient(90deg,rgba(54,57,63,0) 0,#36393f);
+    visibility: hidden !important;
+}
+.sidebar-2K8pFh,
+*[class^='messagesWrapper-'],
+*[class^='scroller'],
+*[class^='wrapper'],
+*[class^='container'],
+*[class^='scroller-'],
+*[class^='themeGhostHairline-'],
+*[class^='scrollerWrap-'],
+*[class^='messages-'],
+*[class^='content-'],
+*[class^='chat-'],
+*[class^='systemPad-'],
+.members-1998pB.scroller,
+.connecting,
+.content-yTz4x3,
+content-yTz4x3,
+titleWrapper-1l0xT9,
+.channelNotices-41mJbj .channelNotice-1-XFjC.quickswitcher-35bYg4,
+.private-channels,
+.scroller-2FKFPG,
+form,
+scrollerWrap-2lJEkd scrollerThemed-2oenus themeGhostHairline-DBD-2d scrollerFade-1Ijw5y,
+.theme-dark .scrollerThemed-2oenus.themeGhostHairline-DBD-2d .scroller-2FKFPG::-webkit-scrollbar-thumb,
+channels-Ie2l6A vertical-V37hAW flex-1O1GKY directionColumn-35P_nrM,
+private-channels,
+.channels-Ie2l6A,
+.members-1bid1J.scroller,
+.guilds-scroller,
+div.scroller-fzNley,
+.theme-dark .guild-header header,
+.private-channels,
+.layers.flex-vertical.flex-spacer,
+.title-qAcLxz,
+.channels-3g2vYe vertical-3X17r5 flex-3B1Tl4 directionColumn-2h-LPR,
+.header,
+section.flex-verticle.flexspacer,
+.theme-dark .guild-wrapper,
+.theme-dark .channels-wrap, .theme-dark .guild-channels-wrapper,
+.theme-dark .scroller.messages,
+.theme-dark .messages-wrapper,
+.theme-dark .messages .message-text,
+.theme-dark .chat,
+.theme-dark .chat>.content,
+.theme-dark .channel-members,
+.theme-dark .private-channels,
+.theme-dark #friends, .theme-dark #friends .friends-table,
+.theme-dark .popout, .theme-dark .pop-out .user-popout,
+.theme-dark .chat .title-wrap,
+.guilds-wrapper,
+.account,
+.theme-dark .guild-channels,
+.theme-dark .chat .content form .typing,
+.guild-channels .channel-text.selected,
+.guild-channels .channel-text:hover,
+.private-channels .channel.selected,
+.private-channels .channel:hover,
+.theme-dark #friends .friends-header,
+.search-bar,
+#voice-connection,
+.guilds-wrapper .guild-separator:after,
+.account .btn,
+.has-more, .has-more button,
+.title-wrap,
+.guilds.scroller,
+.channels-3g2vYe.vertical-3X17r5.flex-3B1Tl4.directaionColumn-2h-LPR,
+.theme-dark .guildsWrapper-5TJh6A,
+#voice-connection .btn {
+    background: transparent !important ;
+}
+
+.chat>.title-wrap.title-wrap-dark {
+	border-bottom: 1px solid rgba(0,0,0,0);
+}
+*[class^='header-'] {
+	border-bottom: 0px solid rgba(0,0,0,0) !important;
+	-webkit-box-shadow: 0 0px 0 rgba(0,0,0,0) !important;
+}
+
+.private-channels .search-bar {
+    border-bottom: 0px solid rgba(0,0,0,0) !important;;
+}
+
+*[class^='flex-']{
+    background: transparent !important;
+}
+.flex-vertical channels-wrap{
+    background: transparent !important;
+}
+
+.scroller::-webkit-scrollbar-track,
+.scroller::-webkit-scrollbar-track-piece {
+    background: transparent !important;
+}
+.layers {
+    background:  transparent !important;
+}
+*[class^='typing-'] { background:  transparent !important;
+}
+
+.layer-3QrUeG {
+	background: linear-gradient( rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95) ), center center fixed , url(
+
+https://i.imgur.com/pxCzWfI.png
+
+)  !important ;
+    background-size: 100% 100% !important;
+
+}
+
+.wrapper-232cHJ
+
+{
+	
+	background-color: #f04747 !important
+	}
+
+/*.bannerImage-1jOskm
+{
+background-image: url(initial), linear-gradient(rgba(54, 57, 63, 0) 0%, rgba(47, 49, 54, 0) 100%) !important
+}
+*/
+
+.theme-dark .wrapper-1ucjTd.modeSelected-1zApJ_ .name-3_Dsmg { color: #00ffbf !important }
+.theme-dark .wrapper-1ucjTd.modeUnread-1zpFdA .name-3_Dsmg { color: yellow !important } 
+.theme-dark .wrapper-1ucjTd.modeUnread-1zpFdA .name-3_Dsmg { color: yellow !important } 

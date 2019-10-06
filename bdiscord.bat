@@ -1,1 +1,2 @@
-python -m beautifuldiscord --css D:/BeautifulDiscord/css.css
+sleep 30;
+beautifuldiscord --css D:/BeautifulDiscord/css.css
