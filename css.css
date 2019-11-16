@@ -1,6 +1,6 @@
 /* hides blocked messages */
 
-*[class^='messageGroupBlocked-']{
+*[class^='messageGroupBlocked']{
     display: none !important;    
 }
 
@@ -9,15 +9,15 @@
 * {
 font-family: "Ubuntu", sans-serif !important;
 font-weight: -1;
+text-rendering: geometricPrecision !important;
 }
 /*  "Ubuntu Light", /*
 
 /* makes text actually white */
 
-.theme-dark .message-group .comment .markup {
-  color: #FFFFFF;
+*[class^='theme-dark'] {
+  --text-normal: #FFFFFF !important;
 }
-
 
 /* makes text vertically closer together */
 
@@ -28,9 +28,9 @@ font-weight: -1;
 }
 
 form {
-	padding-top: -20px !important;
-	border: 0px !important;
-	box-shadow: 0 0px 0px transparent !important;
+    padding-top: -20px !important;
+    border: 0px !important;
+    box-shadow: 0 0px 0px transparent !important;
 }
 
 .message-group.hide-overflow {
@@ -51,8 +51,8 @@ padding-bottom:0px !important;
 
 *[class^='container'],
 *[class^='channelTextArea'] {
-	padding-top: 1px !important;
-	padding-bottom: 1px !important;
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
 
 }
 
@@ -70,7 +70,14 @@ padding-bottom:0px !important;
 }
 
 
+.theme-dark .headerNormal-T_seeN, .scroller-2FKFPG.firefoxFixScrollFlex-cnI2ix.systemPad-3UxEGl.bodyInner-245q0L {
+    background-color: rgba(47, 49, 54, .85) !important;
+}
 
+
+.headerPlaying-j0WQBV, .headerStreaming-2FjmGz {
+    background-color: rgba(114, 137, 218, .85) !important;
+}
 
 /* removes dumb "new messages" thing that nobody cares about */
 
@@ -79,20 +86,24 @@ padding-bottom:0px !important;
 }
 
 
-
+*[class^='expandedFolderBackground-'] {
+background: rgba(47, 49, 54, .6) !important
+}
 /* makes "new activity" notifications on the server list my favorite color */
 
 .guilds-wrapper .guilds .guild.unread:before {
   background: #00ffbf
 }
 
-div#app-mount {
-    background: rgba(0,255,191,.4) !important;
+
+*[class^='typeWindows-'] {
+    background: rgba(0,255,191,.3) !important;
+    margin-top: 0px !important;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    padding-top: 4px !important;
 }
 
-*[class^='-titleBar-'] {
-	background-color: rgba(0,255,191,.4) !important;
-}
 
 
 /* TRANSP.CSS BELOW */
@@ -204,11 +215,11 @@ section.flex-verticle.flexspacer,
 }
 
 .chat>.title-wrap.title-wrap-dark {
-	border-bottom: 1px solid rgba(0,0,0,0);
+    border-bottom: 1px solid rgba(0,0,0,0);
 }
 *[class^='header-'] {
-	border-bottom: 0px solid rgba(0,0,0,0) !important;
-	-webkit-box-shadow: 0 0px 0 rgba(0,0,0,0) !important;
+    border-bottom: 0px solid rgba(0,0,0,0) !important;
+    -webkit-box-shadow: 0 0px 0 rgba(0,0,0,0) !important;
 }
 
 .private-channels .search-bar {
@@ -233,9 +244,9 @@ section.flex-verticle.flexspacer,
 }
 
 .layer-3QrUeG {
-	background: linear-gradient( rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95) ), center center fixed , url(
+    background: linear-gradient( rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75) ), center center fixed , url(
 
-https://i.imgur.com/pxCzWfI.png
+https://i.imgur.com/M2T6aUy.jpg
 
 )  !important ;
     background-size: 100% 100% !important;
@@ -245,9 +256,9 @@ https://i.imgur.com/pxCzWfI.png
 .wrapper-232cHJ
 
 {
-	
-	background-color: #f04747 !important
-	}
+    
+    background-color: #f04747 !important
+    }
 
 /*.bannerImage-1jOskm
 {
@@ -256,5 +267,4 @@ background-image: url(initial), linear-gradient(rgba(54, 57, 63, 0) 0%, rgba(47,
 */
 
 .theme-dark .wrapper-1ucjTd.modeSelected-1zApJ_ .name-3_Dsmg { color: #00ffbf !important }
-.theme-dark .wrapper-1ucjTd.modeUnread-1zpFdA .name-3_Dsmg { color: yellow !important } 
-.theme-dark .wrapper-1ucjTd.modeUnread-1zpFdA .name-3_Dsmg { color: yellow !important } 
+.theme-dark .wrapper-1ucjTd.modeUnread-1zpFdA .name-3_Dsmg { color: yellow !important }
