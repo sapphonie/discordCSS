@@ -131,8 +131,24 @@ color:#FFFFFF;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-    z-index: -2 !important;
+    z-index: -3333 !important;
+    position:absolute;
 }
+
+button.barButtonMain-1giYuj.barButtonBase-3UKlW2 {display:none;}
+
+.jumpToPresentBar-9P20AM {
+    background-color: rgba(255, 0, 0, .7) !important;
+    border-radius: 8px 8px 0 0;
+    background-color: var(--background-accent);
+    opacity: .95;
+    margin-left: 666px;
+    margin-right: -20px;
+    height:48px;
+    z-index: 5 !important;
+    position: absolute;
+}
+
 
 /* h2.headerCozyMeta-rdohGq {
     margin-top: 2.5px !important;
