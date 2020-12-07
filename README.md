@@ -1,8 +1,9 @@
 # discordCSS
 
 
-This is the css I use for my Discord.
+This is the theme I use for my Discord.
 
-I use [BeautifulDiscord](https://github.com/leovoel/BeautifulDiscord) to load it every time I start Discord.
+It was written from scratch, by me, in 2017, and has been updated since.
 
-add `bdiscord.bat` as a shortcut to your startup folder in windows or just do `beautifuldiscord &` at startup on linux. 
+I use [Powercord](https://powercord.dev) to load it every time I start Discord.
+
