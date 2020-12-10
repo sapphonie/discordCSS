@@ -396,9 +396,15 @@ form[class^='form']
     padding-top: 0px;
 }
 
-/* remove discord nitro gift button */
-[aria-label="Send a gift"]
+/* hide nitro button in friends list - taken from
+    https://canary.discord.com/channels/538759280057122817/755015856945102891/781461421249527809
+*/
+#private-channels [href="/store"]
 {
-  display:none;
+  display: none;
 }
 
+[aria-label="Send a gift"]
+{
+    display: none;
+}
