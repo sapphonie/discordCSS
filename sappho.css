@@ -140,9 +140,15 @@ body
 }
 
 /* fix friends tab and other misc heading backgrounds */
-div[class*='base'] [class*='container']
+div[class^='base'] [class^='container']
 {
     background-color: transparent !important;
+}
+
+/* fix replies being broken after above */
+[aria-controls^="popout"] div[class^="channelTextArea"]
+{
+    background-color: #36393f;
 }
 
 /* recolor spotify album art blurred invite background */
@@ -428,7 +434,7 @@ div[class^='containerDefault']
 }
 
 /* color my username rainbow, if modifying this, set "data-author-id" to whatever your discord id is */
-[data-author-id="148929066349625344"] *[class^="username"]
+div[data-author-id="148929066349625344"] span[class^="headerText"] span[class^="username"]
 {
     color: #EEA2B2 !important;
 }
@@ -439,7 +445,7 @@ div[class^='containerDefault']
 /* move wpm indicator above chat box */
 #wpm-indicator-text
 {
-    bottom: 4.6em;
+    bottom: 77px;
     right: 1.25em;
 }
 
