@@ -1,17 +1,22 @@
 /*--------------------/
 /   stephcord theme   /
-/                     /
+/   created 2018ish   /
 /  orig written with  /
 /   beautifuldiscord  /
+/    now works with   /
+/      powercord      /
 /                     /
 /   liable to break   /
 /--------------------*/
+
+/* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Ubuntu:wght@300;400;700&display=swap');
 
 *
 {
     /* changes font to Ubuntu Light */
     font-family: "Ubuntu Light", sans-serif !important;
-    text-rendering: optimizeSpeed !important;
+    text-rendering: geometricPrecision !important;
     /* make it bold */
     font-weight: bold !important;
     /* remove most borders. looks cleaner. */
@@ -20,7 +25,7 @@
     box-shadow: 0px 0px transparent !important;
 }
 
-@keyframes rAinbowNimate
+@keyframes rainbowAni
 {
     from
     {
@@ -60,7 +65,7 @@
 body
 {
     /* set background image here */
-    background: linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), center center fixed, url("https://i.imgur.com/MOqckVL.png") !important;
+    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .66)), center center fixed, url("https://i.imgur.com/MOqckVL.png") !important;
     background-size: 100% 100% !important;
     backdrop-filter: blur(5px) !important;
 
@@ -140,6 +145,12 @@ body
     background-color: transparent !important;
 }
 
+/* recolor spotify album art blurred invite background */
+*[class*='coverImageActionable']
+{
+    background: transparent !important;
+}
+
 /* fix voice channel limits disappearing */
 *[class*='userLimit']
 {
@@ -202,14 +213,14 @@ code, *[class*='comment']
 *[class*='typing']
 {
     border-bottom-width: 0px;
-    margin-bottom: -2px !important;
+    margin-bottom: -2.5px !important;
 }
 
 /* i'm gay */
 *[class^='placeholder'][class*='font']:after
 {
     content: " - you gay bitch";
-    animation: rAinbowNimate 10s linear infinite alternate;
+    animation: rainbowAni 10s linear infinite alternate;
 }
 
 /* recolor folder backgrounds */
@@ -396,15 +407,58 @@ form[class^='form']
     padding-top: 0px;
 }
 
-/* hide nitro button in friends list - taken from
+/* hide nitro button in friends list - stolen from
     https://canary.discord.com/channels/538759280057122817/755015856945102891/781461421249527809
 */
 #private-channels [href="/store"]
 {
-  display: none;
+    display: none;
 }
 
 [aria-label="Send a gift"]
 {
     display: none;
+}
+
+/* color my username rainbow, if modifying this, set "data-author-id" to whatever your discord id is */
+[data-author-id="148929066349625344"] *[class^="username"]
+{
+    animation: rainbowAni 5s linear infinite alternate;
+}
+
+/* plugin specific stuff below here */
+
+/* wpm */
+/* move wpm indicator above chat box */
+#wpm-indicator-text
+{
+    bottom: 4.6em;
+    right: 1.25em;
+}
+
+/* smart typers */
+/* remove gradient on users */
+.typing-user .gradient
+{
+    background-image: none !important;
+    background-color: var(--smartTypers-primary);
+}
+
+/* make typing users bigger */
+.typing-user
+{
+    font-size: 120%;
+}
+
+/* message logger */
+/* ugly css hack to add strikethru to deleted text */
+div > .ml2-deleted [class^="markup"]
+{
+    text-decoration: line-through;
+}
+
+/* fade by 50% to more clearly mark images as deleted */
+div > .ml2-deleted:not(:hover) a
+{
+    filter: opacity(50%) !important;
 }
