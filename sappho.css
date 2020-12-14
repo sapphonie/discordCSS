@@ -433,7 +433,7 @@ div[class^='containerDefault']
     display: none;
 }
 
-/* color my username rainbow, if modifying this, set "data-author-id" to whatever your discord id is */
+/* color my username pink, if modifying this, set "data-author-id" to whatever your discord id is */
 div[data-author-id="148929066349625344"] span[class^="headerText"] span[class^="username"]
 {
     color: #EEA2B2 !important;
@@ -445,8 +445,8 @@ div[data-author-id="148929066349625344"] span[class^="headerText"] span[class^="
 /* move wpm indicator above chat box */
 #wpm-indicator-text
 {
-    bottom: 77px;
-    right: 1.25em;
+    bottom: 77px !important;
+    right: 1.25em !important;
 }
 
 /* smart typers */
