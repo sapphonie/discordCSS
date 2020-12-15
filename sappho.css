@@ -12,7 +12,7 @@
 /* import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Ubuntu:wght@300;400;700&display=swap');
 
-*
+span, div, label, title, button, header, nav, table, td
 {
     /* changes font to Ubuntu Light */
     font-family: "Ubuntu Light", sans-serif !important;
@@ -25,11 +25,16 @@
     box-shadow: 0px 0px transparent !important;
 }
 
+hr
+{
+    display: none !important;
+}
+
 @keyframes rainbowAni
 {
     from
     {
-        color: #00ffbf;
+        color: #00FFBF;
     }
     14.2%
     {
@@ -214,11 +219,11 @@ div[class^='content']::before
     box-shadow: 0px 0px transparent;
 }
 
-/* undertale red text on bold */
+/* sans undertale red text on bold */
 div[class^='markup'] strong
 {
     color: red;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
 }
 
 /* centers typing users a bit better and make it bigger */
@@ -393,7 +398,7 @@ div[class^='emojiPicker-']
 {
     background: #2F3136 !important;
     /* weird hack idk why this works */
-    opacity: .95;
+    opacity: 1;
 }
 
 /* hack the search results to look okish */
@@ -423,12 +428,7 @@ div[class^='containerDefault']
 /* hide nitro button in friends list - stolen from
     https://canary.discord.com/channels/538759280057122817/755015856945102891/781461421249527809
 */
-#private-channels [href="/store"]
-{
-    display: none;
-}
-
-[aria-label="Send a gift"]
+#private-channels [href="/store"], [aria-label="Send a gift"]
 {
     display: none;
 }
