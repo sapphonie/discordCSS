@@ -12,67 +12,29 @@
 /* import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Ubuntu:wght@300;400;700&display=swap');
 
-span, div, label, title, button, header, nav, table, td
+span, div, label, title, button,
+header, nav, table, td, a,
+h1, h2, h3, h4, h5,
+input, select, textarea
 {
     /* changes font to Ubuntu Light */
     font-family: "Ubuntu Light", sans-serif !important;
-    text-rendering: geometricPrecision !important;
+    text-rendering: optimizeLegibility !important;
     /* make it bold */
     font-weight: bold !important;
     /* remove most borders. looks cleaner. */
     border: 0px transparent !important;
     -webkit-box-shadow: 0px 0px transparent !important;
     box-shadow: 0px 0px transparent !important;
-}
-
-hr
-{
-    display: none !important;
-}
-
-@keyframes rainbowAni
-{
-    from
-    {
-        color: #00FFBF;
-    }
-    14.2%
-    {
-        color: #0000FF;
-    }
-    28.5%
-    {
-        color: #4B0082;
-    }
-    42.8%
-    {
-        color: #8B00FF;
-    }
-    57.14%
-    {
-        color: #FF0000;
-    }
-    71.4%
-    {
-        color: #FF7F00;
-    }
-    85.7%
-    {
-        color: #FFFF00;
-    }
-    100%
-    {
-        color: #00FF00;
-    }
+    scroll-behavior: auto !important;
 }
 
 /* selecting elements is ugly. lets just make certain things transparent by setting colors and attribs in :root/body */
 body
 {
     /* set background image here */
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), center center fixed, url("https://i.imgur.com/MOqckVL.png") !important;
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), center center fixed, url("https://i.imgur.com/wjcBdUY.png") !important;
     background-size: 100% 100% !important;
-    backdrop-filter: blur(5px) !important;
 
     /* fix discord peeking over other monitors (as best we can) while focused with multimonitor setups */
     margin-left: 1px;
@@ -238,7 +200,6 @@ div[class*='typing']
 div[class^='placeholder'][class*='font']:after
 {
     content: " - you gay bitch";
-    animation: rainbowAni 10s linear infinite alternate;
 }
 
 /* recolor folder backgrounds */
@@ -275,7 +236,7 @@ form[class^='form']
 /* fix tall jump to present bar */
 div[class^='jumpToPresentBar']
 {
-    padding-bottom: 0px;
+    bottom: -8px;
 }
 
 /* window bar settings */
@@ -425,6 +386,13 @@ div[class^='containerDefault']
     padding-top: 0px;
 }
 
+/* fix inbox color */
+div[class*="recentMentionsPopout"]
+{
+    background-color: var(--discordgreyfull) !important;
+    border-radius: 5px;
+}
+
 /* hide nitro button in friends list - stolen from
     https://canary.discord.com/channels/538759280057122817/755015856945102891/781461421249527809
 */
@@ -433,10 +401,10 @@ div[class^='containerDefault']
     display: none;
 }
 
-/* color my username pink, if modifying this, set "data-author-id" to whatever your discord id is */
+/* color my username, if modifying this, set "data-author-id" to whatever your discord id is */
 div[data-author-id="148929066349625344"] span[class^="headerText"] span[class^="username"]
 {
-    color: #EEA2B2 !important;
+    color: pink !important;
 }
 
 /* plugin specific stuff below here */
