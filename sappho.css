@@ -22,22 +22,20 @@ input, select, textarea
     text-rendering: optimizeLegibility !important;
     /* make it bold */
     font-weight: bold !important;
-    /* remove most borders. looks cleaner. */
+    /* remove most borders. looks cleaner.*/
     border: 0px transparent !important;
     -webkit-box-shadow: 0px 0px transparent !important;
     box-shadow: 0px 0px transparent !important;
-    scroll-behavior: auto !important;
 }
 
 /* selecting elements is ugly. lets just make certain things transparent by setting colors and attribs in :root/body */
-body
+:root
 {
     /* set background image here */
     background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), center center fixed, url("https://i.imgur.com/wjcBdUY.png") !important;
     background-size: 100% 100% !important;
 
     /* fix discord peeking over other monitors (as best we can) while focused with multimonitor setups */
-    margin-left: 1px;
 
     /* set colors here */
     --header-primary: #fff;
@@ -106,8 +104,20 @@ body
     --discordgreyfull: rgba(47,49,54, 1);
 }
 
+/* remove ugly border on friends thing */
+div[class^='searchBar']
+{
+    box-shadow: none !important;
+}
+
 /* fix friends tab and other misc heading backgrounds */
-div[class^='base'] [class^='container']
+div[class^='container']
+{
+    background-color: transparent !important;
+}
+
+/* fix video call backgrounds */
+[class*='wrapper'][class*='normal']
 {
     background-color: transparent !important;
 }
@@ -188,12 +198,12 @@ div[class^='markup'] strong
     letter-spacing: 2px;
 }
 
-/* centers typing users a bit better and make it bigger */
-div[class*='typing']
+/* centers typing users a bit better and make it bigger  */
+[class*='typing-']
 {
     border-bottom-width: 0px;
     margin-bottom: -2px !important;
-    font-size: 105%;
+    font-size: 103%;
 }
 
 /* i'm gay */
@@ -233,8 +243,8 @@ form[class^='form']
     opacity: 1;
 }
 
-/* fix tall jump to present bar */
-div[class^='jumpToPresentBar']
+/* fix tall jump to present bar, and messages failed to load bar */
+div[class^='jumpToPresentBar'], div[class^='messagesErrorBar']
 {
     bottom: -8px;
 }
@@ -393,6 +403,19 @@ div[class*="recentMentionsPopout"]
     border-radius: 5px;
 }
 
+/* clean up reply color
+[class*="channelTextArea"] > [class*="container"]
+{
+    background-color: var(--discordgreyish) !important;
+}
+*/
+
+/* disable tts "speak message" thing */
+#message-tts
+{
+    display:none;
+}
+
 /* hide nitro button in friends list - stolen from
     https://canary.discord.com/channels/538759280057122817/755015856945102891/781461421249527809
 */
@@ -406,6 +429,49 @@ div[data-author-id="148929066349625344"] span[class^="headerText"] span[class^="
 {
     color: pink !important;
 }
+
+/* hide powercord spotify thing */
+.powercord-spotify
+{
+    display: none;
+}
+
+/* stuff stolen from other themes goes here */
+
+/* hide invite to server on right click */
+.submenuContainer-2gbm7M [id="user-context-invite-to-server"] {
+    display: none;
+}
+
+/* Show Discord, even when you're offline */
+.container-16j22k
+{
+  background: transparent;
+  pointer-events: none;
+}
+.container-16j22k *
+{
+  display: none;
+}
+
+.container-16j22k::before {
+    content: 'You\'ve gone offline';
+    display: block;
+    bottom: 24px;
+    right: 24px;
+    position: absolute;
+    padding: 8px 16px;
+    background-color: #f04747;
+    border-radius: 4px;
+    color: #fff;
+}
+
+
+/* Compressed Search Bar */
+.search-2oPWTC .searchBar-3dMhjb {width:24px;transition-duration:0ms;}
+.search-2oPWTC .searchBar-3dMhjb:hover {width:250px !important;}
+.search-2oPWTC.open-6_Y_aH .searchBar-3dMhjb {width: 250px !important;}
+
 
 /* plugin specific stuff below here */
 
@@ -425,6 +491,11 @@ div[data-author-id="148929066349625344"] span[class^="headerText"] span[class^="
     background-color: var(--smartTypers-primary);
 }
 
+.smartTypers-popout {
+    -webkit-filter: blur(0px) !important;
+    filter: blur(0px) !important;
+}
+
 /* message logger */
 /* ugly css hack to add strikethru to deleted text */
 div > .ml2-deleted [class^="markup"]
@@ -436,4 +507,11 @@ div > .ml2-deleted [class^="markup"]
 div > .ml2-deleted:not(:hover) a
 {
     filter: opacity(50%) !important;
+}
+
+/* move typing indicator down */
+.dm-typing-indicator
+{
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
 }
