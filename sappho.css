@@ -273,19 +273,19 @@ div[class*='colorStreamerMode-']
     padding-left: 5px
 }
 
-[class*='modeSelected'] [class*='name']:before
+[class*='modeSelected'] [class*='channelName']:before
 {
     content: "-> ";
 }
 
 /* color unread channels bright green, and add arrows after them */
-[class*='modeUnread'] [class*='name']
+[class*='modeUnread'] [class*='channelName']
 {
     color: #39FF14 !important;
     padding-left: 3px
 }
 
-[class*='modeUnread'] [class*='name']:after
+[class*='modeUnread'] [class*='channelName']:after
 {
     content: " <-";
 }
