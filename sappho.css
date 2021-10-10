@@ -10,7 +10,7 @@
 /--------------------*/
 
 /* import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Ubuntu:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend Deca');
 
 span, div, label, title, button,
 header, nav, table, td, a,
@@ -18,21 +18,26 @@ h1, h2, h3, h4, h5,
 input, select, textarea
 {
     /* changes font to Ubuntu Light */
-    font-family: "Ubuntu Light", sans-serif !important;
+    font-family: "Lexend Deca", sans-serif !important;
     text-rendering: optimizeLegibility !important;
-    /* make it bold */
-    font-weight: bold !important;
     /* remove most borders. looks cleaner.*/
-    border: 0px transparent !important;
-    -webkit-box-shadow: 0px 0px transparent !important;
-    box-shadow: 0px 0px transparent !important;
+    border:                 0px transparent !important;
+    -webkit-box-shadow:     0px 0px transparent !important;
+    box-shadow:             0px 0px transparent !important;
 }
 
 /* selecting elements is ugly. lets just make certain things transparent by setting colors and attribs in :root/body */
 :root
 {
     /* set background image here */
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), center center fixed, url("https://i.imgur.com/wjcBdUY.png") !important;
+    background: linear-gradient(
+        rgba(0, 0, 0, .9),
+        rgba(0, 0, 0, .9)),
+        center
+        center
+        fixed,
+        url("https://img.wallpapersafari.com/desktop/1920/1080/5/11/s7k1C0.png"
+    ) !important;
     background-size: 100% 100% !important;
 
     /* fix discord peeking over other monitors (as best we can) while focused with multimonitor setups */
