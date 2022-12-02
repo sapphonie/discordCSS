@@ -405,7 +405,13 @@ div[class^='containerDefault']
 div[class*="recentMentionsPopout"]
 {
     background-color: var(--discordgreyfull) !important;
+
     border-radius: 5px;
+}
+
+/* fix weird padding on stream previews */
+.streamPreviewWrapper-1O-B1g {
+    padding: 0px !important;
 }
 
 /* clean up reply color
@@ -440,6 +446,8 @@ div[data-author-id="148929066349625344"] span[class^="headerText"] span[class^="
 {
     display: none;
 }
+
+
 
 /* stuff stolen from other themes goes here */
 
@@ -476,6 +484,8 @@ div[data-author-id="148929066349625344"] span[class^="headerText"] span[class^="
 .search-2oPWTC .searchBar-3dMhjb {width:24px;transition-duration:0ms;}
 .search-2oPWTC .searchBar-3dMhjb:hover {width:250px !important;}
 .search-2oPWTC.open-6_Y_aH .searchBar-3dMhjb {width: 250px !important;}
+
+
 
 
 /* plugin specific stuff below here */
