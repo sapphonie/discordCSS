@@ -55,7 +55,7 @@ input, select, textarea
     --interactive-hover: #dcddde;
     --interactive-active: #fff;
     --interactive-muted: #696969;
-    --background-primary: transparent;
+    --background-primary: transparent !important;
     --background-secondary: transparent;
     --background-secondary-alt: transparent;
     --background-tertiary: transparent;
@@ -414,6 +414,16 @@ div[class*="recentMentionsPopout"]
     padding: 0px !important;
 }
 
+/* fix friends tab */
+.container-ZMc96U.themed-Hp1KC_ {
+    background: transparent;
+}
+.theme-dark .background-fkKrXt {
+    background: transparent;
+}
+
+
+
 /* clean up reply color
 [class*="channelTextArea"] > [class*="container"]
 {
@@ -436,10 +446,25 @@ div[class*="recentMentionsPopout"]
 }
 
 /* color my username, if modifying this, set "data-author-id" to whatever your discord id is */
-div[data-author-id="148929066349625344"] span[class^="headerText"] span[class^="username"]
+img[src^="https://cdn.discordapp.com/avatars/148929066349625344"] + h3 span span
 {
-    color: pink !important;
+    color: #FFFF00 !important;
+    animation: rainbow 5000ms infinite linear;
 }
+
+@keyframes rainbow
+{
+  from
+    {
+        -webkit-filter: hue-rotate(0deg);
+    }
+    to
+    {
+        -webkit-filter: hue-rotate(360deg);
+    }
+}
+
+
 
 /* hide powercord spotify thing */
 .powercord-spotify
