@@ -153,7 +153,7 @@ div[class^='tabBody']:before
 }
 
 /* recolor "Hold up!" discord notification when visiting unknown links */
-div[class*='modalContent']
+div[class*='modalConcode spantent']
 {
     background-color: #36393f;
 }
@@ -165,7 +165,7 @@ div[class^='embedWrapper'], code
 }
 
 /* fix code block font */
-code *[class*='code']
+code *[class*='code'], code, code span, .cm-content *
 {
     font-family: "Inconsolata" !important;
 }
