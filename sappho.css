@@ -278,23 +278,29 @@ div[class*='colorStreamerMode-']
     padding-left: 5px
 }
 
+/*
 [class*='modeSelected'] [class*='channelName']:before
 {
     content: "-> ";
 }
-
+*/
 /* color unread channels bright green, and add arrows after them */
-[class*='modeUnread'] [class*='channelName']
+/* [class*='modeUnread'] [class*='channelName'], aria-label="unread, sdk-mod-bridge (text channel)" */
+/* a[aria-label*='unread'] > div.unread-36eUEm unreadRelevant-2f-VSK > div */
+div:nth-child(2) > a > div > div.name-28HaxV.overflow-1wOqNV
 {
     color: #39FF14 !important;
     padding-left: 3px
 }
 
-[class*='modeUnread'] [class*='channelName']:after
+/*
+
+a[aria-label*='unread'] > div > div::after
 {
     content: " <-";
 }
 
+*/
 /* recolor mutual servers / mutual friends tab in user boxes */
 div[class*='noWrap'][class*='root']
 {
