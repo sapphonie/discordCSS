@@ -240,7 +240,7 @@ div[class*='auto-']::-webkit-scrollbar-thumb, div[class*='auto-']::-webkit-scrol
 /* fix random issue with shit overlapping with typing text box after above */
 form[class^='form']
 {
-    margin-top: 0px;
+    margin-top: -20px;
 }
 
 [class*='channelTextAreaDisabled'] [class*='scrollableContainer']
@@ -265,6 +265,7 @@ div[class^='typeWindows-']
     padding-top: 4px;
 }
 
+
 /* streamer mode popup */
 div[class*='colorStreamerMode-']
 {
@@ -278,29 +279,26 @@ div[class*='colorStreamerMode-']
     padding-left: 5px
 }
 
-/*
-[class*='modeSelected'] [class*='channelName']:before
+[class*='modeSelected'] [class*='name']::before
 {
     content: "-> ";
 }
-*/
+
 /* color unread channels bright green, and add arrows after them */
 /* [class*='modeUnread'] [class*='channelName'], aria-label="unread, sdk-mod-bridge (text channel)" */
 /* a[aria-label*='unread'] > div.unread-36eUEm unreadRelevant-2f-VSK > div */
-div:nth-child(2) > a > div > div.name-28HaxV.overflow-1wOqNV
+/* div:nth-child(2) > a > div > div.name-28HaxV.overflow-1wOqNV */
+[class*='modeUnread'] [class*='name']
 {
     color: #39FF14 !important;
     padding-left: 3px
 }
 
-/*
-
-a[aria-label*='unread'] > div > div::after
+[class*='modeUnread'] [class*='name']::after
 {
     content: " <-";
 }
 
-*/
 /* recolor mutual servers / mutual friends tab in user boxes */
 div[class*='noWrap'][class*='root']
 {
