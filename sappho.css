@@ -251,7 +251,8 @@ form[class^='form']
 /* fix tall jump to present bar, and messages failed to load bar */
 div[class^='jumpToPresentBar'], div[class^='messagesErrorBar']
 {
-    bottom: -8px;
+    /* bottom: -8px; */
+    bottom: 12px;
 }
 
 /* window bar settings */
