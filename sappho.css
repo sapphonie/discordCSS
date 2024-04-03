@@ -21,9 +21,11 @@ input, select, textarea
     font-family: "Lexend Deca", sans-serif !important;
     text-rendering: optimizeLegibility !important;
     /* remove most borders. looks cleaner.*/
-    border:                 0px transparent !important;
-    -webkit-box-shadow:     0px 0px transparent !important;
-    box-shadow:             0px 0px transparent !important;
+    /*
+      border:                 1px 1px transparent !important;
+      -webkit-box-shadow:     1px 1px transparent !important;
+      box-shadow:             1px 1px transparent !important;
+    */
 }
 
 /* selecting elements is ugly. lets just make certain things transparent by setting colors and attribs in :root/body */
@@ -31,12 +33,12 @@ input, select, textarea
 {
     /* set background image here */
     background: linear-gradient(
-        rgba(0, 0, 0, .9),
-        rgba(0, 0, 0, .9)),
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.85)),
         center
         center
         fixed,
-        url("https://img.wallpapersafari.com/desktop/1920/1080/5/11/s7k1C0.png"
+        url("https://sappho.io/files/su_background1.png"
     ) !important;
     background-size: 100% 100% !important;
 
