@@ -562,3 +562,9 @@ div > .ml2-deleted:not(:hover) a
     margin-top: 15px !important;
     margin-bottom: 15px !important;
 }
+
+/* z index -1 avatar decorations on lower left, otherwise it covers up the green voice chat indicator :( */
+.avatarDecoration_c51b4e
+{
+    z-index: -1 !important;
+}
