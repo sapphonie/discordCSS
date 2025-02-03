@@ -576,3 +576,9 @@ div[class^="buttonContainer"]>div>div {
         display: none;
     }
 }
+
+/* remove the exact seperator for the useless react buttons we already torched */
+.separator_f84418
+{
+    display:none;
+}
