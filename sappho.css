@@ -568,3 +568,11 @@ div > .ml2-deleted:not(:hover) a
 {
     z-index: -1 !important;
 }
+
+/* remove the stupid "click to react" buttons on desktop */
+div[class^="buttonContainer"]>div>div {
+    >div[aria-label^="Click to react with"],
+    >div[aria-label^="Click to remove"]{
+        display: none;
+    }
+}
