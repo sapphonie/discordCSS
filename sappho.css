@@ -166,7 +166,7 @@ input, select, textarea
 
 
 /* fix friends list tab being black */
-.tabBody__133bf
+.tabBody__133bf, main.container__133bf
 {
     background: transparent !important;
 }
