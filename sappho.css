@@ -12,6 +12,131 @@
 /* import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Lexend+Deca&display=swap');
 
+
+
+
+
+
+
+
+
+
+/**
+ * @name actuallybasicbackground
+ * @author nvhhr
+ * @description very simple background css
+ * modified from https://github.com/nvhhr/discordcss/blob/main/snippets/actuallybasicbackground.theme.css
+*/
+
+/*customize these*/
+:root
+{
+    // --nvbgimg: url("https://w.wallhaven.cc/full/85/wallhaven-851q5o.jpg");
+    // --nvbgadjust: rgb(0 0 0 / .6); /*use this to tone the bg for better visibility*/
+   --scrollbar-thin-track: transparent;
+   --scrollbar-auto-track: transparent;
+   
+   background: linear-gradient(
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.85)),
+        center
+        center
+        fixed,
+        url("https://sappho.io/files/su_background1.png"
+    ) !important;
+
+} 
+
+/*we'll set the background image at the very bottom*/
+body { background: center/cover var(--nvbgimg) !important; }
+/*add the toning layer..*/
+#app-mount { background: var(--nvbgadjust) !important; }
+
+/*then we clear out backgrounds from a bunch of elements*/
+[class^=app_], /*main app bg*/
+[class^=bg_], /*another bg layer*/
+[class*=guilds_], /*serverlist*/
+[class^=sidebar_], /*channellist*/
+[class^=sidebar_] [class^=container_], /*another layer on channellist*/
+[class^=chat_], /*chat bg*/
+[class^=chatContent_], /*another layer on chat*/
+[class^=chatContent_] + [class^=container_], /*memberlist*/
+[class^=members_], /*another layer on memberlist*/
+[class^=member_], /*each member also has a bg*/
+[class^=chat_] [class^=container_], /*forum channel*/
+[class*=mainCard_], /*forum channel entry*/
+[class^=chatLayerWrapper_] > [class^=resizeHandle_], /*thread sidebar resizer*/
+[class^=chatLayerWrapper_] > [class^=container_], /*thread sidebar*/
+[class^=chatLayerWrapper_] > [class^=container_] > [class^=container_], /*thread sidabar title*/
+[class^=chat_] [class^=wrapper_], /*voicechannel*/
+[class*=gradientContainer_], /*gradients in voicechannel*/
+[class^=channelChatWrapper_], /*voicechannel chat*/
+[class^=chatTarget_], /*voicechannel chat again*/
+[class^=channelChatWrapper_] [class^=resizeHandle_], /*voicechannel chat resizer*/
+[class^=channelChatWrapper_] [class^=container_], /*voicechannel chat yet again*/
+[class^=title_], /*top toolbar*/
+[class^=children_]::after, /*toolbar overflow fadeout*/
+[class^=panels_], /*user panel*/
+[class^=chatContent_] > [class^=form_], /*chat input area in visual refresh*/
+[class^=channelTextArea_], /*chat input*/
+[class^=channelTextArea_] [class^=scrollableContainer_], /*chat input again*/
+[class^=chatContent_] > form::before, /*wtf even is this and why, discord?*/
+[class^=chatContent_] > form::after, /*weird thing in scrollbar*/
+[data-list-id="chat-messages"] > [class^=wrapper_], /*skeleton before messages are loaded*/
+[data-list-id="chat-messages"] > [class^=wrapper_] > [class^=wrapper_], /*skeleton has many bones in it*/
+[class^=privateChannels_], /*DM list*/
+[class^=privateChannels_] [class^=scroller_], /*DM list again*/
+[class*=userProfileOuterUnthemed_], /*DM right sidebar when user has no profile theme*/
+[class*=userProfileOuterUnthemed_] [class^=userPanelInner_], /*same*/
+[class^=sidebar_] + [class^=container_], /*friends list*/
+[class^=sidebar_] + [class^=container_] > section, /*friends list top bar*/
+[class^=nowPlayingColumn_], /* friends list right sidebar*/
+[class^=nowPlayingColumn_] > [class^=container_], /*yeah*/
+[class^=nowPlayingColumn_] [class^=body_], /*activities have..*/
+[class^=nowPlayingColumn_] [class^=section_], /*..a double background too*/
+[class^=itemCard_], /*friends list activity cards*/
+[class^=shop_], /*shop tab content*/
+[class^=shop_] > section, /*shop top bar*/
+[class^=shopScroll_], /*shop content*/
+[class^=pageWrapper_], /*again*/
+[id^=vc-indicators-indicator-items], /*online friend count if plugin is enabled*/
+[class^=sidebar_]::after, /*tiny little area under the profile display*/
+[class^=layer_],
+[class^=sidebarRegion_], /* settings shit */
+[class^=contentRegion_],
+[class^=contentRegionScroller_], /* main region */
+[class^=sidebarRegionScroller_], /* sidebar region */
+[class^=standardSidebarView_]
+ { background: none !important; }
+
+/*remove some shadows*/
+[class^=chat_]::before,
+[class^=header_],
+[class^=content_]::before,
+[class^=tabBody_]::before, /*dm list*/
+[class^=searchBar_] /*dm list search*/
+ { box-shadow: none; }
+
+/*fixes*/
+[class^=sidebar_],
+[class^=userPanelInner_]
+ { border-radius: 0 !important; }
+[class^=privateChannels_] > [class^=scroller_] /*user panel overlaps DM list*/
+ { margin-bottom: 55px; }
+
+/*make server banner etc scroll away because of overlap*/
+[class^=sidebar_] [class^=container_]:has( > [class^=header_])
+ { position: static; }
+
+
+
+
+
+
+
+
+
+
 span, div, label, title, button,
 header, nav, table, td, a,
 h1, h2, h3, h4, h5,
@@ -31,133 +156,12 @@ input, select, textarea
 /* selecting elements is ugly. lets just make certain things transparent by setting colors and attribs in :root/body */
 :root
 {
-    /* set background image here */
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.85),
-        rgba(0, 0, 0, 0.85)),
-        center
-        center
-        fixed,
-        url("https://sappho.io/files/su_background1.png"
-    ) !important;
-    background-size: 100% 100% !important;
-
-    /* fix discord peeking over other monitors (as best we can) while focused with multimonitor setups */
-
-    /* set colors here */
-    --header-primary: #fff;
-    --header-secondary: #b9bbbe;
-    /* set text color to mostly white */
-    --text-normal: rgba(255,255,255,0.85);
-    --text-muted: #72767d;
-    --text-link: #00b0f4;
-    /* make most text a bit brighter */
-    --channels-default: rgba(255,255,255,0.85);
-    --interactive-normal: #b9bbbb;
-    --interactive-hover: #dcddde;
-    --interactive-active: #fff;
-    --interactive-muted: #696969;
-    --background-primary: transparent !important;
-    --background-secondary: transparent;
-    --background-secondary-alt: transparent;
-    --background-tertiary: transparent;
-    --background-accent: #4f545c;
-    --background-floating: #18191c;
-    --background-mobile-primary: transparent;
-    --background-mobile-secondary: #2f3136;
-    --background-modifier-hover: rgba(79,84,92,0.16);
-    --background-modifier-active: rgba(79,84,92,0.24);
-    --background-modifier-selected: rgba(79,84,92,0.32);
-    --background-modifier-accent: hsla(0,0%,100%,0.06);
-    --background-mentioned: rgba(250,166,26,0.05);
-    /* make hovered messages and mentioned messages a bit brigher */
-    --background-mentioned-hover: rgba(250,166,26,0.25);
-    --background-message-hover: rgba(255,255,255,0.025);
-    --background-help-warning: rgba(250,166,26,0.1);
-    --background-help-info: rgba(0,176,244,0.1);
-    /* make small scrollbar thumbs a bit brighter */
-    --scrollbar-thin-thumb: var(--scrollbarcolor);
-    --scrollbar-auto-thumb: var(--scrollbarcolor);
-    --scrollbar-auto-scrollbar-color-thumb: var(--scrollbarcolor);
-    /* remove track */
-    --scrollbar-thin-track: transparent;
-    --scrollbar-auto-track: transparent;
-    --scrollbar-auto-scrollbar-color-track: transparent;
-    --elevation-stroke: 0 0 0 1px rgba(4,4,5,0.15);
-    --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
-    --elevation-medium: 0 4px 4px rgba(0,0,0,0.16);
-    --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
-    --logo-primary: #fff;
-    --focus-primary: #00b0f4;
-    --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
-    --channeltextarea-background: #40444b;
-    --activity-card-background: #202225;
-    --textbox-markdown-syntax: #8e9297;
-    --deprecated-card-bg: rgba(32,34,37,0.6);
-    --deprecated-card-editable-bg: rgba(32,34,37,0.3);
-    --deprecated-store-bg: #36393f;
-    --deprecated-quickswitcher-input-background: #72767d;
-    --deprecated-quickswitcher-input-placeholder: hsla(0,0%,100%,0.3);
-    --deprecated-text-input-bg: rgba(0,0,0,0.1);
-    --deprecated-text-input-border: rgba(0,0,0,0.3);
-    --deprecated-text-input-border-hover: #040405;
-    --deprecated-text-input-border-disabled: #202225;
-    --deprecated-text-input-prefix: #dcddde;
 
     /* custom colors */
     --transwhite: rgba(255,255,255,0.075);
     --scrollbarcolor: rgba(204, 204, 204, .666);
     --discordgreyish: rgba(47,49,54, .9);
     --discordgreyfull: rgba(47,49,54, 1);
-}
-
-/* remove ugly border on friends thing */
-div[class^='searchBar']
-{
-    box-shadow: none !important;
-}
-
-/* fix friends tab and other misc heading backgrounds */
-div[class^='container']
-{
-    background-color: transparent !important;
-}
-
-/* fix video call backgrounds */
-[class*='wrapper'][class*='normal']
-{
-    background-color: transparent !important;
-}
-
-/* fix replies being broken after above */
-[aria-controls^="popout"] div[class^="channelTextArea"]
-{
-    background-color: #36393f;
-}
-
-/* recolor spotify album art blurred invite background */
-div[class*='coverImageActionable']
-{
-    background: transparent !important;
-}
-
-/* fix voice channel limits disappearing */
-div[class*='userLimit']
-{
-    background-color: var(--transwhite);
-    border-radius: 10px;
-}
-
-/* remove annoying divider in friends list */
-div[class^='tabBody']:before
-{
-    display: none;
-}
-
-/* recolor "Hold up!" discord notification when visiting unknown links */
-div[class*='modalConcode spantent']
-{
-    background-color: #36393f;
 }
 
 /* recolor embed backgrounds and code blocks */
@@ -167,36 +171,19 @@ div[class^='embedWrapper'], code
 }
 
 /* fix code block font */
+/* note: doesn't work */
 code *[class*='code'], code, code span, .cm-content *
 {
     font-family: "Inconsolata" !important;
 }
 
-/* brighten code block comment color a bit */
+/* brighten code block comment color a bit
+note: test
 *[class*='comment']
 {
    color: #888888;
 }
-
-/* fix code block font for powercord */
-.powercord-codeblock-table td:last-child, [class*='hljs'], *[class*='powercord-codeblock']
-{
-    font-family: "Inconsolata", monospace !important;
-}
-
-/* idk what this does */
-div[class*='drawerSizingWrapper']
-{
-    background-color: var(--discordgreyfull) !important;
-    border-radius: 5px;
-}
-
-/* remove annoying tab at top of messages window, on border of channel name/desc and messages */
-div[class^='content']::before
-{
-    -webkit-box-shadow: 0px 0px transparent;
-    box-shadow: 0px 0px transparent;
-}
+ */
 
 /* sans undertale red text on bold */
 div[class^='markup'] strong
@@ -205,13 +192,6 @@ div[class^='markup'] strong
     letter-spacing: 2px;
 }
 
-/* centers typing users a bit better and make it bigger  */
-[class*='typing-']
-{
-    border-bottom-width: 0px;
-    margin-bottom: -2px !important;
-    font-size: 103%;
-}
 
 /* i'm gay */
 div[class^='placeholder'][class*='font']:after
@@ -219,61 +199,7 @@ div[class^='placeholder'][class*='font']:after
     content: " - you gay bitch";
 }
 
-/* recolor folder backgrounds */
-span[class^='expandedFolderBackground-'], div[class^='folder-']
-{
-    background: var(--transwhite);
-    /* (mostly) fix folders having weird outlines if collapsed */
-    border-radius: 24px;
-}
 
-/* remove xtra space above chat form */
-div[class*='disableScrollAnchor-']
-{
-    margin-bottom: -20px;
-}
-
-/* fix scrollbar being borked after above */
-div[class*='auto-']::-webkit-scrollbar-thumb, div[class*='auto-']::-webkit-scrollbar-track
-{
-    margin-bottom: 20px;
-}
-
-/* fix random issue with shit overlapping with typing text box after above */
-form[class^='form']
-{
-    margin-top: -20px;
-}
-
-[class*='channelTextAreaDisabled'] [class*='scrollableContainer']
-{
-    opacity: 1;
-}
-
-/* fix tall jump to present bar, and messages failed to load bar */
-div[class^='jumpToPresentBar'], div[class^='messagesErrorBar']
-{
-    /* bottom: -8px; */
-    bottom: 12px;
-}
-
-/* window bar settings */
-div[class^='typeWindows-']
-{
-    /* window bar color */
-    background: var(--transwhite);
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-left: 0px;
-    padding-top: 4px;
-}
-
-
-/* streamer mode popup */
-div[class*='colorStreamerMode-']
-{
-    background-color: transparent;
-}
 
 /* color current channel bright pink, and add arrow in front of it */
 [class*='modeSelected'] [class*='name']
@@ -302,54 +228,9 @@ div[class*='colorStreamerMode-']
     content: " <-";
 }
 
-/* recolor mutual servers / mutual friends tab in user boxes */
-div[class*='noWrap'][class*='root']
-{
-    background-color: rgba(47, 49, 54, 1);
-    border-radius: 5px;
-}
 
-/* recolor discord name popups on mouseover */
-div[class*='tooltip']
-{
-    /* can't use transparency here because opacity overrides it. Probably. */
-    background-color: #111111;
-    border-radius: 5px;
-}
 
-/* recolor spotify & game previews in voice chat, as well as user info panels. hack */
-[class^='scrollerBase'], *[class^='animator']
-{
-    background-color: #202225;
-    border-radius: 5px;
-}
 
-/* recolor user info panels */
-div[class^='infoScroller'], div[class^='topSectionNormal']
-{
-    background: var(--discordgreyish);
-}
-
-div[class^='activity'], div[class^='headerFill']
-{
-    background: transparent;
-}
-
-div[class^='topSectionPlaying']
-{
-    background: rgba(114, 137, 218, .95);
-}
-
-div[class^='topSectionSpotify']
-{
-    background: rgba(29, 185, 84, .95);
-}
-
-/* recolor user info popup panels */
-div[id^='popout']
-{
-    opacity: 1 !important;
-}
 
 /* have people actually show up as speaking since we deleted box borders earlier. orig color is #43b581 */
 div[class*='avatarSpeaking'], div[class*='speaking']
@@ -358,91 +239,8 @@ div[class*='avatarSpeaking'], div[class*='speaking']
     -webkit-box-shadow: inset 0 0 0 2.33px #00ff8b, inset 0 0 0 0px transparent !important;
 }
 
-/* recolor video call backgrounds */
-[class*='noChat']
-{
-    background: transparent;
-}
-
-/* recolor pinned messages */
-div[class*='messagesPopoutWrap']
-{
-    background: rgba(47,49,54, .95)
-}
-
-/* recolor quickswitcher */
-div[class*='quickswitcher']
-{
-    background: rgba(47,49,54, .95)
-}
-
-/* fix the emoji picker to be all one color */
-div[class^='emojiPicker-']
-{
-    background: #2F3136 !important;
-    /* weird hack idk why this works */
-    opacity: 1;
-}
-
-/* hack the search results to look okish */
-[class^="resultsGroup"], [id*="wrapper-1"]
-{
-    background: rgba(47,49,54, .95) !important
-}
-
-/* remove annoying gradient on hover w/ search results */
-div[class^="option-"]:after
-{
-    background: transparent !important;
-}
-
-/* show feedback still for search results */
-div[class^="option-"]:hover
-{
-    background: var(--discordgreyish);
-}
-
-/* remove spaces in between channels */
-div[class^='containerDefault']
-{
-    padding-top: 0px;
-}
-
-/* fix inbox color */
-div[class*="recentMentionsPopout"]
-{
-    background-color: var(--discordgreyfull) !important;
-
-    border-radius: 5px;
-}
-
-/* fix weird padding on stream previews */
-.streamPreviewWrapper-1O-B1g {
-    padding: 0px !important;
-}
-
-/* fix friends tab */
-.container-ZMc96U.themed-Hp1KC_ {
-    background: transparent;
-}
-.theme-dark .background-fkKrXt {
-    background: transparent;
-}
 
 
-
-/* clean up reply color
-[class*="channelTextArea"] > [class*="container"]
-{
-    background-color: var(--discordgreyish) !important;
-}
-*/
-
-/* disable tts "speak message" thing */
-#message-tts
-{
-    display:none;
-}
 
 /* hide nitro button in friends list - stolen from
     https://canary.discord.com/channels/538759280057122817/755015856945102891/781461421249527809
@@ -473,95 +271,6 @@ img[src^="https://cdn.discordapp.com/avatars/148929066349625344"] + h3 span span
 
 
 
-/* hide powercord spotify thing */
-.powercord-spotify
-{
-    display: none;
-}
-
-
-
-/* stuff stolen from other themes goes here */
-
-/* hide invite to server on right click */
-.submenuContainer-2gbm7M [id="user-context-invite-to-server"] {
-    display: none;
-}
-
-/* Show Discord, even when you're offline */
-.container-16j22k
-{
-  background: transparent;
-  pointer-events: none;
-}
-.container-16j22k *
-{
-  display: none;
-}
-
-.container-16j22k::before {
-    content: 'You\'ve gone offline';
-    display: block;
-    bottom: 24px;
-    right: 24px;
-    position: absolute;
-    padding: 8px 16px;
-    background-color: #f04747;
-    border-radius: 4px;
-    color: #fff;
-}
-
-
-/* Compressed Search Bar */
-.search-2oPWTC .searchBar-3dMhjb {width:24px;transition-duration:0ms;}
-.search-2oPWTC .searchBar-3dMhjb:hover {width:250px !important;}
-.search-2oPWTC.open-6_Y_aH .searchBar-3dMhjb {width: 250px !important;}
-
-
-
-
-/* plugin specific stuff below here */
-
-/* wpm */
-/* move wpm indicator above chat box */
-#wpm-indicator-text
-{
-    bottom: 77px !important;
-    right: 1.25em !important;
-}
-
-/* smart typers */
-/* remove gradient on users */
-.typing-user .gradient
-{
-    background-image: none !important;
-    background-color: var(--smartTypers-primary);
-}
-
-.smartTypers-popout {
-    -webkit-filter: blur(0px) !important;
-    filter: blur(0px) !important;
-}
-
-/* message logger */
-/* ugly css hack to add strikethru to deleted text */
-div > .ml2-deleted [class^="markup"]
-{
-    text-decoration: line-through;
-}
-
-/* fade by 50% to more clearly mark images as deleted */
-div > .ml2-deleted:not(:hover) a
-{
-    filter: opacity(50%) !important;
-}
-
-/* move typing indicator down */
-.dm-typing-indicator
-{
-    margin-top: 15px !important;
-    margin-bottom: 15px !important;
-}
 
 /* z index -1 avatar decorations on lower left, otherwise it covers up the green voice chat indicator :( */
 .avatarDecoration_c51b4e
