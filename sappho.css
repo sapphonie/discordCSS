@@ -1,3 +1,4 @@
+
 /*--------------------/
 /   stephcord theme   /
 /   created 2018ish   /
@@ -31,20 +32,15 @@
 /*customize these*/
 :root
 {
-    // --nvbgimg: url("https://w.wallhaven.cc/full/85/wallhaven-851q5o.jpg");
-    // --nvbgadjust: rgb(0 0 0 / .6); /*use this to tone the bg for better visibility*/
+   --nvbgimg: url("https://sappho.io/files/su_background1.png");
+   --nvbgadjust: linear-gradient(
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0.85)
+    ); /*use this to tone the bg for better visibility*/
    --scrollbar-thin-track: transparent;
    --scrollbar-auto-track: transparent;
    
-   background: linear-gradient(
-        rgba(0, 0, 0, 0.85),
-        rgba(0, 0, 0, 0.85)),
-        center
-        center
-        fixed,
-        url("https://sappho.io/files/su_background1.png"
-    ) !important;
-
+    background-repeat: no-repeat;
 } 
 
 /*we'll set the background image at the very bottom*/
