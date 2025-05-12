@@ -301,3 +301,10 @@ section.panels_c48ade
 {
     backdrop-filter: blur(10px) !important;
 }
+
+/* make text input field look a bit nicer by blurring things behind it */
+form.form_f75fb0.formWithLoadedChatInput_f75fb0
+{
+    backdrop-filter: blur(20px) !important;
+}
+
