@@ -295,3 +295,9 @@ div[class^="buttonContainer"]>div>div {
 {
     display:none;
 }
+
+/* blur "voice connected" panel because text will otherwise overlap with what's underneath (on dms in particular) */
+section.panels_c48ade
+{
+    backdrop-filter: blur(10px) !important;
+}
