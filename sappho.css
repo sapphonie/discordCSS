@@ -32,7 +32,7 @@
 /*customize these*/
 :root
 {
-   --nvbgimg: url("https://sappho.io/files/su_background1.png");
+   --nvbgimg: url("https://raw.githubusercontent.com/sapphonie/discordCSS/refs/heads/master/su_background1.png");
    --nvbgadjust: linear-gradient(
         rgba(0, 0, 0, 0.75),
         rgba(0, 0, 0, 0.85)
