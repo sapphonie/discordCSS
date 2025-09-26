@@ -312,3 +312,9 @@ form.form_f75fb0.formWithLoadedChatInput_f75fb0
 .panel__5dec7.activityPanel_c48ade {
     background-color: transparent !important;
 }
+
+/* correct server settings popout also being transparent making things overlap lol */
+.platform-win .standardSidebarView__23e6b {
+    background: rgba(0, 0, 0, 0.95) !important;
+}
+
